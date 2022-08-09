@@ -8,6 +8,8 @@ namespace App\Controller\Pages;
 use \App\Model\Entity\UsersAd;
 use \App\Utils\View;
 use \WilliamCosta\DatabaseManager\Pagination;
+use Adldap\Adldap;
+
 
 class Userad extends Page
 {
@@ -18,7 +20,6 @@ class Userad extends Page
      */
     private static function getUsersItems($request, &$obPagination)
     {
-
 
         //USUÁRIOS
         $itens = '';
@@ -45,6 +46,7 @@ class Userad extends Page
                 'usuario'       => $obUsersAd->usuario,
                 'nivelacesso'   => $obUsersAd->nivelacesso,
                 'cpf'           => $obUsersAd->cpf,
+                'status'        => $obUsersAd->status,
                 'descricao'     => $obUsersAd->descricao,
                 'data'          => date('d/m/Y H:i:s', strtotime($obUsersAd->data)),
             ]);
@@ -127,6 +129,7 @@ class Userad extends Page
         $obUsersAd->usuario     = $postVars['usuario'];
         $obUsersAd->nivelacesso = $postVars['nivel-de-acesso'];
         $obUsersAd->cpf         = $postVars['cpf'];
+        $obUsersAd->status      = $postVars['status'];
         $obUsersAd->descricao   = $postVars['descricao'];
         $obUsersAd->cadastrar();
 
