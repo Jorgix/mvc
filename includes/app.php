@@ -5,10 +5,14 @@ require __DIR__ . '/../vendor/autoload.php';
 use \App\Utils\View;
 use \WilliamCosta\DotEnv\Environment;
 use \WilliamCosta\DatabaseManager\Database;
+use Adldap\Adldap;
+use Adldap\AdldapException;
+use Adldap\Auth\BindException;
+
 
 Database::config(
     'localhost',
-    'projeto_ead',
+    'projeto_ad',
     'root',
     12345,
     3306

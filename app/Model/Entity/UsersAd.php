@@ -58,6 +58,7 @@ class UsersAd
             'usuario' => $this->usuario,
             'nivelacesso' => $this->nivelacesso,
             'cpf' => $this->cpf,
+            'status' => $this->status,
             'descricao' => $this->descricao,
             'data' => $this->data
         ]);

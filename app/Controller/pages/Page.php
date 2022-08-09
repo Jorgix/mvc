@@ -4,8 +4,6 @@ namespace App\Controller\Pages;
 
 use \App\Utils\View;
 
-
-
 class Page
 {
 
