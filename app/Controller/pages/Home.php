@@ -3,7 +3,6 @@
 namespace App\Controller\Pages;
 
 use \App\Utils\View;
-use \App\Model\Entity\UsersAd;
 
 
 class Home extends Page
