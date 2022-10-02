@@ -5,11 +5,12 @@ require __DIR__ . '/../vendor/autoload.php';
 use \App\Utils\View;
 use \WilliamCosta\DotEnv\Environment;
 use \WilliamCosta\DatabaseManager\Database;
-use Adldap\Adldap;
-use Adldap\AdldapException;
-use Adldap\Auth\BindException;
+use \App\Http\Middleware\Queue as MiddlewareQueue;
 
+//CARREGA VARIÁVEIS DE AMBIENTE
+Environment::load(__DIR__.'/../');
 
+//DEFINE AS CONFIGURAÇÕES DO BANCO DE DADOS
 Database::config(
     'localhost',
     'projeto_ad',
@@ -18,14 +19,15 @@ Database::config(
     3306
 );
 
-
-//CARREGA VARIÁVEIS DE AMBIENTE
-Environment::load(__DIR__ . '/../');
-
 //DEFINE A CONSTANTE DE URL
 define('URL', getenv('URL'));
 
 //DEFINE O VALOR PADRÃO DAS VARIÁVEIS
 View::init([
     'URL' => URL
+]);
+
+//DEFINE O MAPEAMENTO DE MIDDLEWARES
+MiddlewareQueue::setMap([
+    'maintenance' => \App\Http\Middleware\Maintenance::class
 ]);
