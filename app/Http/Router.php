@@ -5,6 +5,7 @@ namespace App\Http;
 use \Closure;
 use \Exception;
 use \ReflectionFunction;
+use \App\Http\Middleware\Queue as MiddlewareQueue;
 
 class Router
 {
@@ -70,6 +71,9 @@ class Router
                 continue;
             }
         }
+
+        //MIDDLEWARES DA ROTA
+        $params['middlewares'] = $params['middlewares'] ?? [];
 
         //VARIÁVEIS DA ROTA
         $params['variables'] = [];
@@ -159,7 +163,7 @@ class Router
         $httpMethod = $this->request->getHttpMethod();
 
         //VALIDA AS ROTAS
-        foreach ($this->routes as $patternRoute=>$methods) {
+        foreach ($this->routes as $patternRoute => $methods) {
 
             //VERIFICA SE A URI BATE COM O PADRÃO
             if (preg_match($patternRoute, $uri, $matches)) {
@@ -214,8 +218,8 @@ class Router
                 $args[$name] = $route['variables'][$name] ?? '';
             }
 
-            //RETORNA A EXECUCAÇÃO DA FUNÇÃO
-            return call_user_func_array($route['controller'], $args);
+            //RETORNA A EXECUCAÇÃO DA FILA DE MIDDLEWARES 
+            return (new MiddlewareQueue($route['middlewares'], $route['controller'], $args))->next($this->request);
         } catch (Exception $e) {
             return new Response($e->getCode(), $e->getMessage());
         }
@@ -225,7 +229,8 @@ class Router
      * Método responsável por retornar a URL atual
      * @return string
      */
-    public function getCurrentUrl(){
-        return $this->url.$this->getUri();
+    public function getCurrentUrl()
+    {
+        return $this->url . $this->getUri();
     }
 }
