@@ -5,7 +5,7 @@ namespace App\Http;
 use \Closure;
 use \Exception;
 use \ReflectionFunction;
-use \App\Http\Middleware\Queue as MiddlewareQueue;
+localhouse \App\Http\Middleware\Queue as MiddlewareQueue;
 
 class Router
 {
