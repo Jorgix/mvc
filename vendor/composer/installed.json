@@ -70,8 +70,8 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.83.23",
-            "version_normalized": "8.83.23.0",
+            "version": "v8.83.25",
+            "version_normalized": "8.83.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -451,17 +451,17 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.4.11",
-            "version_normalized": "5.4.11.0",
+            "version": "v5.4.13",
+            "version_normalized": "5.4.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "b8f306d7b8ef34fb3db3305be97ba8e088fb4861"
+                "reference": "2bf2ccab581bec363191672f0df40e0c85569e1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/b8f306d7b8ef34fb3db3305be97ba8e088fb4861",
-                "reference": "b8f306d7b8ef34fb3db3305be97ba8e088fb4861",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/2bf2ccab581bec363191672f0df40e0c85569e1c",
+                "reference": "2bf2ccab581bec363191672f0df40e0c85569e1c",
                 "shasum": ""
             },
             "require": {
@@ -485,7 +485,7 @@
                 "ext-intl": "To show region name in time zone dump",
                 "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
             },
-            "time": "2022-07-20T13:00:38+00:00",
+            "time": "2022-09-06T13:23:31+00:00",
             "bin": [
                 "Resources/bin/var-dump-server"
             ],
@@ -523,7 +523,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.4.11"
+                "source": "https://github.com/symfony/var-dumper/tree/v5.4.13"
             },
             "funding": [
                 {
@@ -543,17 +543,17 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v8.83.15",
-            "version_normalized": "8.83.15.0",
+            "version": "v8.83.25",
+            "version_normalized": "8.83.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tighten/collect.git",
-                "reference": "7275c1b5f6bfc539d72bb5984d3b9a89e47e27c9"
+                "reference": "7d2a6fc5e97c5f7209a780bea98f35042c1fd0ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tighten/collect/zipball/7275c1b5f6bfc539d72bb5984d3b9a89e47e27c9",
-                "reference": "7275c1b5f6bfc539d72bb5984d3b9a89e47e27c9",
+                "url": "https://api.github.com/repos/tighten/collect/zipball/7d2a6fc5e97c5f7209a780bea98f35042c1fd0ea",
+                "reference": "7d2a6fc5e97c5f7209a780bea98f35042c1fd0ea",
                 "shasum": ""
             },
             "require": {
@@ -565,7 +565,7 @@
                 "nesbot/carbon": "^2.23.0",
                 "phpunit/phpunit": "^8.3"
             },
-            "time": "2022-04-15T20:31:14+00:00",
+            "time": "2022-08-22T17:55:07+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -594,7 +594,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tighten/collect/issues",
-                "source": "https://github.com/tighten/collect/tree/v8.83.15"
+                "source": "https://github.com/tighten/collect/tree/v8.83.25"
             },
             "install-path": "../tightenco/collect"
         },

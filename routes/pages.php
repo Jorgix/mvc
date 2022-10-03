@@ -6,9 +6,6 @@ use \App\Controller\Pages;
 
 // ROTA HOME
 $router->get('/', [
-    'middlewares' => [
-        'maintenance'
-    ],
     function () {
         return new Response(200, Pages\Home::getHome());
     }
